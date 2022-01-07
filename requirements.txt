@@ -2,3 +2,4 @@ yfinance==0.1.68
 fbprophet==0.7.1
 plotly==5.5.0
 pystan==3.3.0
+convertdate==2.3.2
