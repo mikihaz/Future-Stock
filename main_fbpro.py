@@ -25,7 +25,7 @@ data_load_state = st.text('Loading data...')
 # Load data from yahoo finance.
 start=dt.date(2010,1,1)
 end=dt.date.today()
-data=pdr.get_data_yahoo("GOOG", start, end)
+data=pdr.get_data_yahoo("AAPL", start, end)
 
 #fill nan vale with next value within columns
 data.fillna(method="ffill",inplace=True)
