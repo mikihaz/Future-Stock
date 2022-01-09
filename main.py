@@ -15,9 +15,12 @@ import yfinance as yf
 import datetime
 
 # print title of web app
-st.title("Stock Market Analysis and Prediction")
-st.markdown("> Stock Market Analysis and Prediction is the project on technical analysis, visualization and prediction using data provided by Yahoo Finance.")
-st.markdown("> It is web app which predicts the future value of company stock or other ﬁnancial instrument traded on an exchange.")
+st.title("Future Stock")
+st.markdown("> Future Stock is the project on technical analysis, visualization and prediction using data provided by Yahoo Finance.")
+st.markdown("> It is a Web App which predicts the future value of Company Stock or other Financial Instrument traded on an Exchange.")
+
+# ticker input from user
+ticker=st.text_input('Enter Ticker of Company', 'AAPL')
 
 # Create a text element and let the reader know the data is loading.
 data_load_state = st.text('Loading data...')
@@ -25,9 +28,9 @@ data_load_state = st.text('Loading data...')
 # Load data from yahoo finance.
 start=dt.date(2010,1,1)
 end=dt.date.today()
-data=pdr.get_data_yahoo("AAPL", start, end)
+data=pdr.get_data_yahoo(ticker, start, end)
 
-#fill nan vale with next value within columns
+#fill nan value with next value within columns
 data.fillna(method="ffill",inplace=True)
 
 # Notify the reader that the data was successfully loaded.
@@ -70,7 +73,7 @@ st.subheader('Newly format DataSet:-')
 st.dataframe(data.tail(500))
 
 forecast_col = 'Adj Close'
-forecast_out = int(math.ceil(0.01 * len(data)))
+forecast_out = int(math.ceil(365*2))
 data['label'] = data[forecast_col].shift(-forecast_out)
 
 X = np.array(data.drop(['label'], 1))
@@ -87,8 +90,8 @@ clf.fit(X_train, y_train)
 confidence = clf.score(X_test, y_test)
 
 # display the accuracy of forecast value.
-st.subheader('Accuracy:')
-st.write(confidence)
+st.subheader('Accuracy Percentage:')
+st.write(str(round(confidence*100,2)),'%')
 
 forecast_set = clf.predict(X_lately)
 data['Forecast'] = np.nan
@@ -111,7 +114,7 @@ for i in forecast_set:
 
 # display the forecast value.
 st.subheader('Forecast value :-')
-st.dataframe(data.tail(50))
+st.dataframe(data.tail(30))
 
 # display the graph of adj close and forecast columns
 st.subheader('Graph of Adj Close and Forecast :-')

@@ -19,7 +19,7 @@ reindexing = True
 st.title('Stock Prediction Web Application')
 
 # Take Ticker Symbol input from User  
-ticker_symbol = st.sidebar.text_input('Input the Ticker Symbol for the Stock: ', max_chars=5).upper()
+ticker_symbol = st.sidebar.text_input('Input the Ticker Symbol for the Stock: ').upper()
 if not ticker_symbol:
     st.sidebar.warning('Please input a Ticker Symbol.')
     st.stop()
