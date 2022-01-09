@@ -16,7 +16,8 @@ warnings.filterwarnings('ignore')
 reindexing = True
 
 # Title of the Web App
-st.title('Stock Prediction Web Application')
+st.title('f($) | Future Stock')
+st.markdown("> It is a Web App which predicts the future value of Company Stock or other Financial Instrument traded on an Exchange.")
 
 # Take Ticker Symbol input from User  
 ticker_symbol = st.sidebar.text_input('Input the Ticker Symbol for the Stock: ').upper()
