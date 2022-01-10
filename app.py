@@ -17,6 +17,7 @@ reindexing = True
 
 # Title of the Web App
 st.title('f($) | Future Stock')
+st.markdown('Version - 10.01.022')
 st.markdown("> It is a Web App which predicts the future value of Company Stock or other Financial Instrument traded on an Exchange.")
 
 # Take Ticker Symbol input from User  
@@ -32,6 +33,12 @@ company_name = info['longName']
 
 # Sub-header of the Web App
 st.subheader('''{} Stock Information and it's Forecasting'''.format(company_name))
+st.subheader(info['longName']) 
+st.markdown('** Sector **: ' + info['sector'])
+st.markdown('** Industry **: ' + info['industry'])
+st.markdown('** Phone **: ' + info['phone'])
+st.markdown('** Address **: ' + info['address1'] + ', ' + info['city'] + ', ' + info['zip'] + ', '  +  info['country'])
+st.markdown('** Website **: ' + info['website'])
 
 # Take User input regarding retriving stock in a periodic form or from a particular time period
 stock_options = ('Using Periods', 'Using Start and End Date with an interval')
@@ -166,22 +173,30 @@ else:
         st.sidebar.warning('Please select the Algorithm for prediction.')
         st.stop()
     elif selected_algo == algo[1]:
+        st.subheader(f"{company_name} Stock Forecasting Using {selected_algo}")
         st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[2]:
+        st.subheader(f"{company_name} Stock Forecasting Using {selected_algo}")
         st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[3]:
+        st.subheader(f"{company_name} Stock Forecasting Using {selected_algo}")
         st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[4]:
+        st.subheader(f"{company_name} Stock Forecasting Using {selected_algo}")
         st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[5]:
+        st.subheader(f"{company_name} Stock Forecasting Using {selected_algo}")
         st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[6]:
+        st.subheader(f"{company_name} Stock Forecasting Using {selected_algo}")
         st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[7]:
+        st.subheader(f"{company_name} Stock Forecasting Using {selected_algo}")
         st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[8]:
         sp.Prophet()
     elif selected_algo == algo[9]:
+        st.subheader(f"{company_name} Stock Forecasting Using {selected_algo}")
         st.warning('!! This Feature is Coming Soon !!')
     else:
         pass
