@@ -21,7 +21,7 @@ st.markdown('Version - 10.01.022')
 st.markdown("> It is a Web App which predicts the future value of Company Stock or other Financial Instrument traded on an Exchange.")
 
 # Take Ticker Symbol input from User  
-ticker_symbol = st.sidebar.text_input('Input the Ticker Symbol for the Stock: ').upper()
+ticker_symbol = st.sidebar.text_input('Search Ticker Symbol for the Stock: ').upper()
 if not ticker_symbol:
     st.sidebar.warning('Please input a Ticker Symbol.')
     st.stop()
@@ -32,13 +32,13 @@ info = ticker.info
 company_name = info['longName']
 
 # Sub-header of the Web App
-st.subheader('''{} Stock Information and it's Forecasting'''.format(company_name))
 st.subheader(info['longName']) 
 st.markdown('** Sector **: ' + info['sector'])
 st.markdown('** Industry **: ' + info['industry'])
 st.markdown('** Phone **: ' + info['phone'])
 st.markdown('** Address **: ' + info['address1'] + ', ' + info['city'] + ', ' + info['zip'] + ', '  +  info['country'])
 st.markdown('** Website **: ' + info['website'])
+st.subheader('''{} Stock Information and it's Forecasting'''.format(company_name))
 
 # Take User input regarding retriving stock in a periodic form or from a particular time period
 stock_options = ('Using Periods', 'Using Start and End Date with an interval')
