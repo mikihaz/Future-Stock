@@ -18,7 +18,8 @@ reindexing = True
 # Title of the Web App
 st.title('f($) | Future Stock')
 st.markdown('Version - 10.01.022')
-st.markdown("> It is a Web App which predicts the future value of Company Stock or other Financial Instrument traded on an Exchange.")
+st.markdown("> It is a Web App which Analyze and Predict the Future value of Company Stock or other Financial Instrument traded on an Exchange.")
+st.markdown("> Use Left Sidebar to Search Your Company.")
 
 # Take Ticker Symbol input from User  
 ticker_symbol = st.sidebar.text_input('Search Ticker Symbol for the Stock: ').upper()
