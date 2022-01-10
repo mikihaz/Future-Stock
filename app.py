@@ -166,23 +166,23 @@ else:
         st.sidebar.warning('Please select the Algorithm for prediction.')
         st.stop()
     elif selected_algo == algo[1]:
-        pass
+        st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[2]:
-        pass
+        st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[3]:
-        pass
+        st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[4]:
-        pass
+        st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[5]:
-        pass
+        st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[6]:
-        pass
+        st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[7]:
-        pass
+        st.warning('!! This Feature is Coming Soon !!')
     elif selected_algo == algo[8]:
         sp.Prophet()
     elif selected_algo == algo[9]:
-        pass
+        st.warning('!! This Feature is Coming Soon !!')
     else:
         pass
     
