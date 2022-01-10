@@ -5,6 +5,7 @@ from datetime import date
 import warnings
 import streamlit as st
 import yfinance as yf
+from PIL import Image
 
 # Importing Self-made Libraries
 import plot_data as plt_data
@@ -16,6 +17,8 @@ warnings.filterwarnings('ignore')
 reindexing = True
 
 # Title of the Web App
+image = Image.open('future_stock_logo.png')
+st.image(image)
 st.title('f($) | Future Stock')
 st.markdown('Version - 10.01.022')
 st.markdown("> It is a Web App which Analyze and Predict the Future value of Company Stock or other Financial Instrument traded on an Exchange.")
