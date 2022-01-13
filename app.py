@@ -45,6 +45,7 @@ st.markdown('** Website **: ' + info['website'])
 st.subheader('''{} Stock Information and it's Forecasting'''.format(company_name))
 
 # Take User input regarding retriving stock in a periodic form or from a particular time period
+st.sidebar.subheader(info['longName'] + 'Stocks').upper()
 stock_options = ('Using Periods', 'Using Start and End Date with an interval')
 selected_stock_options = st.sidebar.selectbox('How to you want to observe the Stock prices data?', stock_options)
 
