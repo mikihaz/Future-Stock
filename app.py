@@ -29,7 +29,6 @@ if not ticker_symbol:
     st.stop()
 if ticker_symbol:
     st.warning('Use Left Sidebar to Customize Your Data.')
-    st.stop()
     
 # Create Yahoo finance Ticker object
 ticker = yf.Ticker(ticker_symbol)
