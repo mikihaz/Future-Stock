@@ -26,9 +26,9 @@ st.markdown("> It is a Web App which Analyze and Predict the Future value of Com
 
 # Take Ticker Symbol input from User  
 ticker_symbol = st.sidebar.text_input('Search Ticker Symbol for the Stock: ').upper()
+ticker_symbol = st.text_input('Search Ticker Symbol for the Stock: ').upper()
 if not ticker_symbol:
     st.sidebar.warning('Please input a Ticker Symbol.')
-    ticker_symbol = st.text_input('Search Ticker Symbol for the Stock: ').upper()
     st.stop()
 
 # Create Yahoo finance Ticker object
