@@ -50,7 +50,6 @@ stock_options = ('Using Periods', 'Using Start and End Date with an interval')
 selected_stock_options = st.sidebar.selectbox('How to you want to observe the Stock prices data?', stock_options)
 
 # Take User input on information required by the selected way of retriving the stock
-st.sidebar.subheader(info['longName']).upper()
 if selected_stock_options == stock_options[1]:
     start_date = st.sidebar.date_input('Input the Start date from where you want to observe the Stock prices'
                                 , min_value=date(1800, 1, 1), max_value=date.today())
