@@ -19,7 +19,7 @@ reindexing = True
 # Title of the Web App
 image = Image.open('future_stock_logo.png')
 st.image(image)
-st.title('f($) | Predict Today, Smile Tomorrow')
+st.subheader('f($) | Predict Today, Smile Tomorrow')
 st.markdown('Version - 10.01.022')
 
 # Take Ticker Symbol input from User  
@@ -27,7 +27,10 @@ ticker_symbol = st.text_input('Search Ticker Symbol for the Stock: ').upper()
 if not ticker_symbol:
     st.warning('Please input a Ticker Symbol.')
     st.stop()
-
+if ticker_symbol:
+    st.warning('Use Left Sidebar to Customize Your Data.')
+    st.stop()
+    
 # Create Yahoo finance Ticker object
 ticker = yf.Ticker(ticker_symbol)
 info = ticker.info
@@ -47,6 +50,7 @@ stock_options = ('Using Periods', 'Using Start and End Date with an interval')
 selected_stock_options = st.sidebar.selectbox('How to you want to observe the Stock prices data?', stock_options)
 
 # Take User input on information required by the selected way of retriving the stock
+st.sidebar.subheader(info['longName']).upper()
 if selected_stock_options == stock_options[1]:
     start_date = st.sidebar.date_input('Input the Start date from where you want to observe the Stock prices'
                                 , min_value=date(1800, 1, 1), max_value=date.today())
