@@ -19,15 +19,16 @@ reindexing = True
 # Title of the Web App
 image = Image.open('future_stock_logo.png')
 st.image(image)
-st.title('f($) | Future Stock')
+st.title('f($) | Predict Today, Smile Tomorrow')
 st.markdown('Version - 10.01.022')
 st.markdown("> It is a Web App which Analyze and Predict the Future value of Company Stock or other Financial Instrument traded on an Exchange.")
-st.markdown("> Use Left Sidebar to Search Your Company.")
+#st.markdown("> Use Left Sidebar to Search Your Company.")
 
 # Take Ticker Symbol input from User  
 ticker_symbol = st.sidebar.text_input('Search Ticker Symbol for the Stock: ').upper()
 if not ticker_symbol:
     st.sidebar.warning('Please input a Ticker Symbol.')
+    ticker_symbol = st.text_input('Search Ticker Symbol for the Stock: ').upper()
     st.stop()
 
 # Create Yahoo finance Ticker object
@@ -169,7 +170,7 @@ if task == task_options[1]:
 
 else:
     algo = ('', 'AR', 'MA', 'ARMA', 'ARIMA', 'ARCH', 'GARCH', 'Linear Regression', 'Facebook Prophet', 'LTSM', 'Transfomer')
-    selected_algo = st.sidebar.selectbox('Select the Time Series Algorithm to predict the stock prices', algo, index=0)
+    selected_algo = st.sidebar.selectbox('Select the Time Series Algorithm to predict the stock prices', algo, index=8)
 
     sp = Stock_Prediction(data, ticker_symbol, company_name)
     
